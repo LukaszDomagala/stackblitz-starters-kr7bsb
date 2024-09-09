@@ -56,5 +56,12 @@
       "sourceRoot": "src"
     }
   },
+  "schematics": {
+    "@schematics/angular": {
+      "component": {
+        "changeDetection": "OnPush"
+      }
+    }
+  },
   "version": 1
 }

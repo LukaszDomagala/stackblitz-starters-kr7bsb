@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { provideHttpClient } from '@angular/common/http';
 import { RouterModule, provideRouter } from '@angular/router';
@@ -8,6 +8,7 @@ import { NotificationsComponent } from './notifications/notifications.component'
 @Component({
   selector: 'app-root',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [RouterModule],
   template: `
     <div class="flex gap-5">
