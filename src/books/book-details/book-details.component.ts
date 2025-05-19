@@ -13,9 +13,9 @@ export interface BookDetailsOptions {
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule],
   templateUrl: './book-details.component.html',
-  styles: ''
+  styles: '.authors {color: gray; margin-bottom: 1rem;}'
 })
 export class BookDetailsComponent {
-  book = input<Book>();
-  options = input<BookDetailsOptions>();
+  book = input.required<Book>();
+  options = input.required<BookDetailsOptions>();
 }

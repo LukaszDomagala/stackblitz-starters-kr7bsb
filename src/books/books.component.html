@@ -1,17 +1,20 @@
 <h1>Books</h1>
-<form>
+<form (ngSubmit)="onSubmit($event)">
     <label>
         <span>Find books:</span>
-        <input type="text">
+        <input [(ngModel)]="query" name="query" type="text">
     </label>
     <button type="submit">Search</button>
 </form>
 <hr>
+<div>{{query}}</div>
 <button type="button" (click)="toggleOptions()">Display Authors: {{bookDetailsOptions.displayAuthors}}</button>
 <hr>
 <main>
     <div>Total results: <!-- TODO --></div>
     <ul>
-        <li><!-- TODO --></li>
+        @for(book of (books | async)!.items; track $index) {
+            <app-book-details [book]="book" [options]="bookDetailsOptions"></app-book-details>
+        }
     </ul>
 </main>
